@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea0ce72770634344b96889225362c907" Name="Diagram1" ZoomLevel="69">
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.cart" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.cart_item" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.order_item" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.order" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.product" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.product_meta" Width="1.5" PointX="5.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.Transaction" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShoppingCartModel.USER" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_cart_item_cart" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_cart_user" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_cart_item_product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_order_item_order" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_order_item_product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_orders_user" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_transactions_order" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_meta_product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_product_user" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShoppingCartModel.fk_transactions_user" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

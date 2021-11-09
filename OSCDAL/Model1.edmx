@@ -4,136 +4,33 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OnlineShoppingCartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="OSCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cart">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ProductId" />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SNO." Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="userId" Type="bigint" />
-          <Property Name="sessionId" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="token" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="status" Type="smallint" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="mobile" Type="varchar" MaxLength="15" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="line1" Type="varchar" MaxLength="50" />
-          <Property Name="line2" Type="varchar" MaxLength="50" />
-          <Property Name="city" Type="varchar" MaxLength="50" />
-          <Property Name="province" Type="varchar" MaxLength="50" />
-          <Property Name="country" Type="varchar" MaxLength="50" />
-          <Property Name="createdAt" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="updatedAt" Type="datetime2" Precision="0" />
-          <Property Name="content" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="cart_item">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="productId" Type="bigint" Nullable="false" />
-          <Property Name="cartId" Type="bigint" Nullable="false" />
-          <Property Name="sku" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="price" Type="float" Nullable="false" />
-          <Property Name="discount" Type="float" Nullable="false" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="productname" Type="varchar" MaxLength="50" />
           <Property Name="quantity" Type="smallint" Nullable="false" />
-          <Property Name="active" Type="smallint" Nullable="false" />
-          <Property Name="createdAt" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="updatedAt" Type="datetime2" Precision="0" />
-          <Property Name="content" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="order_item">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="productId" Type="bigint" Nullable="false" />
-          <Property Name="orderId" Type="bigint" Nullable="false" />
-          <Property Name="sku" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="price" Type="float" Nullable="false" />
-          <Property Name="discount" Type="float" Nullable="false" />
-          <Property Name="quantity" Type="smallint" Nullable="false" />
-          <Property Name="createdAt" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="updatedAt" Type="datetime2" Precision="0" />
-          <Property Name="content" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="orders">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="userId" Type="bigint" />
-          <Property Name="sessionId" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="token" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="status" Type="smallint" Nullable="false" />
-          <Property Name="subTotal" Type="float" Nullable="false" />
-          <Property Name="itemDiscount" Type="float" Nullable="false" />
-          <Property Name="tax" Type="float" Nullable="false" />
-          <Property Name="shipping" Type="float" Nullable="false" />
-          <Property Name="total" Type="float" Nullable="false" />
-          <Property Name="promo" Type="varchar" MaxLength="50" />
-          <Property Name="discount" Type="float" Nullable="false" />
-          <Property Name="grandTotal" Type="float" Nullable="false" />
-          <Property Name="firstName" Type="varchar" MaxLength="50" />
-          <Property Name="middleName" Type="varchar" MaxLength="50" />
-          <Property Name="lastName" Type="varchar" MaxLength="50" />
-          <Property Name="mobile" Type="varchar" MaxLength="15" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="line1" Type="varchar" MaxLength="50" />
-          <Property Name="line2" Type="varchar" MaxLength="50" />
-          <Property Name="city" Type="varchar" MaxLength="50" />
-          <Property Name="province" Type="varchar" MaxLength="50" />
-          <Property Name="country" Type="varchar" MaxLength="50" />
-          <Property Name="createdAt" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="updatedAt" Type="datetime2" Precision="0" />
-          <Property Name="content" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="product">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="SNO." />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="userId" Type="bigint" Nullable="false" />
+          <Property Name="SNO." Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="bigint" Nullable="false" />
           <Property Name="title" Type="varchar" MaxLength="75" Nullable="false" />
-          <Property Name="metaTitle" Type="varchar" MaxLength="100" />
-          <Property Name="slug" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="summary" Type="varchar" MaxLength="255" />
-          <Property Name="type" Type="smallint" Nullable="false" />
-          <Property Name="sku" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="price" Type="float" Nullable="false" />
           <Property Name="discount" Type="float" Nullable="false" />
           <Property Name="quantity" Type="smallint" Nullable="false" />
-          <Property Name="shop" Type="smallint" Nullable="false" />
           <Property Name="createdAt" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="updatedAt" Type="datetime2" Precision="0" />
-          <Property Name="publishedAt" Type="datetime2" Precision="0" />
           <Property Name="startsAt" Type="datetime2" Precision="0" />
           <Property Name="endsAt" Type="datetime2" Precision="0" />
-          <Property Name="content" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="product_meta">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="productId" Type="bigint" Nullable="false" />
-          <Property Name="key" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="content" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="Transactions">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="userId" Type="bigint" Nullable="false" />
-          <Property Name="orderId" Type="bigint" Nullable="false" />
-          <Property Name="code" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="type" Type="smallint" Nullable="false" />
-          <Property Name="mode" Type="smallint" Nullable="false" />
-          <Property Name="status" Type="smallint" Nullable="false" />
-          <Property Name="createdAt" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="updatedAt" Type="datetime2" Precision="0" />
-          <Property Name="content" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="USERS">
           <Key>
@@ -142,331 +39,47 @@
           <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="mobile" Type="varchar" MaxLength="15" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
           <Property Name="password" Type="varchar" MaxLength="32" Nullable="false" />
           <Property Name="registeredAt" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="lastLogin" Type="datetime2" Precision="7" />
         </EntityType>
-        <Association Name="fk_cart_item_cart">
-          <End Role="cart" Type="Self.cart" Multiplicity="1" />
-          <End Role="cart_item" Type="Self.cart_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cart">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cart_item">
-              <PropertyRef Name="cartId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_cart_item_product">
-          <End Role="product" Type="Self.product" Multiplicity="1" />
-          <End Role="cart_item" Type="Self.cart_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cart_item">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_cart_user">
-          <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
-          <End Role="cart" Type="Self.cart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cart">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_meta_product">
-          <End Role="product" Type="Self.product" Multiplicity="1" />
-          <End Role="product_meta" Type="Self.product_meta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="product_meta">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_order_item_order">
-          <End Role="orders" Type="Self.orders" Multiplicity="1" />
-          <End Role="order_item" Type="Self.order_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="orders">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="order_item">
-              <PropertyRef Name="orderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_order_item_product">
-          <End Role="product" Type="Self.product" Multiplicity="1" />
-          <End Role="order_item" Type="Self.order_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="order_item">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_orders_user">
-          <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
-          <End Role="orders" Type="Self.orders" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="orders">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product_user">
-          <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
-          <End Role="product" Type="Self.product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="product">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_transactions_order">
-          <End Role="orders" Type="Self.orders" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="orders">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Transactions">
-              <PropertyRef Name="orderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_transactions_user">
-          <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Transactions">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="OnlineShoppingCartModelStoreContainer">
+        <EntityContainer Name="OSCModelStoreContainer">
           <EntitySet Name="cart" EntityType="Self.cart" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="cart_item" EntityType="Self.cart_item" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="order_item" EntityType="Self.order_item" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="product_meta" EntityType="Self.product_meta" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="fk_cart_item_cart" Association="Self.fk_cart_item_cart">
-            <End Role="cart" EntitySet="cart" />
-            <End Role="cart_item" EntitySet="cart_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_cart_item_product" Association="Self.fk_cart_item_product">
-            <End Role="product" EntitySet="product" />
-            <End Role="cart_item" EntitySet="cart_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_cart_user" Association="Self.fk_cart_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="cart" EntitySet="cart" />
-          </AssociationSet>
-          <AssociationSet Name="fk_meta_product" Association="Self.fk_meta_product">
-            <End Role="product" EntitySet="product" />
-            <End Role="product_meta" EntitySet="product_meta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_order_item_order" Association="Self.fk_order_item_order">
-            <End Role="orders" EntitySet="orders" />
-            <End Role="order_item" EntitySet="order_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_order_item_product" Association="Self.fk_order_item_product">
-            <End Role="product" EntitySet="product" />
-            <End Role="order_item" EntitySet="order_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_orders_user" Association="Self.fk_orders_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="orders" EntitySet="orders" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product_user" Association="Self.fk_product_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="product" EntitySet="product" />
-          </AssociationSet>
-          <AssociationSet Name="fk_transactions_order" Association="Self.fk_transactions_order">
-            <End Role="orders" EntitySet="orders" />
-            <End Role="Transactions" EntitySet="Transactions" />
-          </AssociationSet>
-          <AssociationSet Name="fk_transactions_user" Association="Self.fk_transactions_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="Transactions" EntitySet="Transactions" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="OnlineShoppingCartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="OSCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="cart">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="ProductId" />
           </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="userId" Type="Int64" />
-          <Property Name="sessionId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="status" Type="Int16" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="line1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="line2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="updatedAt" Type="DateTime" Precision="0" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="cart_item" Relationship="Self.fk_cart_item_cart" FromRole="cart" ToRole="cart_item" />
-          <NavigationProperty Name="USER" Relationship="Self.fk_cart_user" FromRole="cart" ToRole="USERS" />
-        </EntityType>
-        <EntityType Name="cart_item">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="productId" Type="Int64" Nullable="false" />
-          <Property Name="cartId" Type="Int64" Nullable="false" />
-          <Property Name="sku" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="price" Type="Double" Nullable="false" />
-          <Property Name="discount" Type="Double" Nullable="false" />
+          <Property Name="SNO_" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="Int64" />
+          <Property Name="ProductId" Type="Int64" Nullable="false" />
+          <Property Name="productname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="quantity" Type="Int16" Nullable="false" />
-          <Property Name="active" Type="Int16" Nullable="false" />
-          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="updatedAt" Type="DateTime" Precision="0" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="cart" Relationship="Self.fk_cart_item_cart" FromRole="cart_item" ToRole="cart" />
-          <NavigationProperty Name="product" Relationship="Self.fk_cart_item_product" FromRole="cart_item" ToRole="product" />
-        </EntityType>
-        <EntityType Name="order_item">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="productId" Type="Int64" Nullable="false" />
-          <Property Name="orderId" Type="Int64" Nullable="false" />
-          <Property Name="sku" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="price" Type="Double" Nullable="false" />
-          <Property Name="discount" Type="Double" Nullable="false" />
-          <Property Name="quantity" Type="Int16" Nullable="false" />
-          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="updatedAt" Type="DateTime" Precision="0" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="order" Relationship="Self.fk_order_item_order" FromRole="order_item" ToRole="orders" />
-          <NavigationProperty Name="product" Relationship="Self.fk_order_item_product" FromRole="order_item" ToRole="product" />
-        </EntityType>
-        <EntityType Name="order">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="userId" Type="Int64" />
-          <Property Name="sessionId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="status" Type="Int16" Nullable="false" />
-          <Property Name="subTotal" Type="Double" Nullable="false" />
-          <Property Name="itemDiscount" Type="Double" Nullable="false" />
-          <Property Name="tax" Type="Double" Nullable="false" />
-          <Property Name="shipping" Type="Double" Nullable="false" />
-          <Property Name="total" Type="Double" Nullable="false" />
-          <Property Name="promo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="discount" Type="Double" Nullable="false" />
-          <Property Name="grandTotal" Type="Double" Nullable="false" />
-          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="line1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="line2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="updatedAt" Type="DateTime" Precision="0" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="order_item" Relationship="Self.fk_order_item_order" FromRole="orders" ToRole="order_item" />
-          <NavigationProperty Name="USER" Relationship="Self.fk_orders_user" FromRole="orders" ToRole="USERS" />
-          <NavigationProperty Name="Transactions" Relationship="Self.fk_transactions_order" FromRole="orders" ToRole="Transactions" />
         </EntityType>
         <EntityType Name="product">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="SNO_" />
           </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="userId" Type="Int64" Nullable="false" />
+          <Property Name="SNO_" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int64" Nullable="false" />
           <Property Name="title" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="metaTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="slug" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="summary" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="type" Type="Int16" Nullable="false" />
-          <Property Name="sku" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="price" Type="Double" Nullable="false" />
           <Property Name="discount" Type="Double" Nullable="false" />
           <Property Name="quantity" Type="Int16" Nullable="false" />
-          <Property Name="shop" Type="Int16" Nullable="false" />
           <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="updatedAt" Type="DateTime" Precision="0" />
-          <Property Name="publishedAt" Type="DateTime" Precision="0" />
           <Property Name="startsAt" Type="DateTime" Precision="0" />
           <Property Name="endsAt" Type="DateTime" Precision="0" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="cart_item" Relationship="Self.fk_cart_item_product" FromRole="product" ToRole="cart_item" />
-          <NavigationProperty Name="order_item" Relationship="Self.fk_order_item_product" FromRole="product" ToRole="order_item" />
-          <NavigationProperty Name="product_meta" Relationship="Self.fk_meta_product" FromRole="product" ToRole="product_meta" />
-          <NavigationProperty Name="USER" Relationship="Self.fk_product_user" FromRole="product" ToRole="USERS" />
-        </EntityType>
-        <EntityType Name="product_meta">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="productId" Type="Int64" Nullable="false" />
-          <Property Name="key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="product" Relationship="Self.fk_meta_product" FromRole="product_meta" ToRole="product" />
-        </EntityType>
-        <EntityType Name="Transaction">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="userId" Type="Int64" Nullable="false" />
-          <Property Name="orderId" Type="Int64" Nullable="false" />
-          <Property Name="code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="type" Type="Int16" Nullable="false" />
-          <Property Name="mode" Type="Int16" Nullable="false" />
-          <Property Name="status" Type="Int16" Nullable="false" />
-          <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="updatedAt" Type="DateTime" Precision="0" />
-          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="order" Relationship="Self.fk_transactions_order" FromRole="Transactions" ToRole="orders" />
-          <NavigationProperty Name="USER" Relationship="Self.fk_transactions_user" FromRole="Transactions" ToRole="USERS" />
         </EntityType>
         <EntityType Name="USER">
           <Key>
@@ -475,335 +88,58 @@
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="registeredAt" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="lastLogin" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="carts" Relationship="Self.fk_cart_user" FromRole="USERS" ToRole="cart" />
-          <NavigationProperty Name="orders" Relationship="Self.fk_orders_user" FromRole="USERS" ToRole="orders" />
-          <NavigationProperty Name="products" Relationship="Self.fk_product_user" FromRole="USERS" ToRole="product" />
-          <NavigationProperty Name="Transactions" Relationship="Self.fk_transactions_user" FromRole="USERS" ToRole="Transactions" />
         </EntityType>
-        <Association Name="fk_cart_item_cart">
-          <End Role="cart" Type="Self.cart" Multiplicity="1" />
-          <End Role="cart_item" Type="Self.cart_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cart">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cart_item">
-              <PropertyRef Name="cartId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_cart_user">
-          <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
-          <End Role="cart" Type="Self.cart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cart">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_cart_item_product">
-          <End Role="product" Type="Self.product" Multiplicity="1" />
-          <End Role="cart_item" Type="Self.cart_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="cart_item">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_order_item_order">
-          <End Role="orders" Type="Self.order" Multiplicity="1" />
-          <End Role="order_item" Type="Self.order_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="orders">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="order_item">
-              <PropertyRef Name="orderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_order_item_product">
-          <End Role="product" Type="Self.product" Multiplicity="1" />
-          <End Role="order_item" Type="Self.order_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="order_item">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_orders_user">
-          <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
-          <End Role="orders" Type="Self.order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="orders">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_transactions_order">
-          <End Role="orders" Type="Self.order" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="orders">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Transactions">
-              <PropertyRef Name="orderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_meta_product">
-          <End Role="product" Type="Self.product" Multiplicity="1" />
-          <End Role="product_meta" Type="Self.product_meta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="product_meta">
-              <PropertyRef Name="productId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_product_user">
-          <End Role="USERS" Type="Self.USER" Multiplicity="1" />
-          <End Role="product" Type="Self.product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="product">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_transactions_user">
-          <End Role="USERS" Type="Self.USER" Multiplicity="1" />
-          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="USERS">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Transactions">
-              <PropertyRef Name="userId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="OnlineShoppingCartEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="OSCEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="carts" EntityType="Self.cart" />
-          <EntitySet Name="cart_item" EntityType="Self.cart_item" />
-          <EntitySet Name="order_item" EntityType="Self.order_item" />
-          <EntitySet Name="orders" EntityType="Self.order" />
           <EntitySet Name="products" EntityType="Self.product" />
-          <EntitySet Name="product_meta" EntityType="Self.product_meta" />
-          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
           <EntitySet Name="USERS" EntityType="Self.USER" />
-          <AssociationSet Name="fk_cart_item_cart" Association="Self.fk_cart_item_cart">
-            <End Role="cart" EntitySet="carts" />
-            <End Role="cart_item" EntitySet="cart_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_cart_user" Association="Self.fk_cart_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="cart" EntitySet="carts" />
-          </AssociationSet>
-          <AssociationSet Name="fk_cart_item_product" Association="Self.fk_cart_item_product">
-            <End Role="product" EntitySet="products" />
-            <End Role="cart_item" EntitySet="cart_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_order_item_order" Association="Self.fk_order_item_order">
-            <End Role="orders" EntitySet="orders" />
-            <End Role="order_item" EntitySet="order_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_order_item_product" Association="Self.fk_order_item_product">
-            <End Role="product" EntitySet="products" />
-            <End Role="order_item" EntitySet="order_item" />
-          </AssociationSet>
-          <AssociationSet Name="fk_orders_user" Association="Self.fk_orders_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="orders" EntitySet="orders" />
-          </AssociationSet>
-          <AssociationSet Name="fk_transactions_order" Association="Self.fk_transactions_order">
-            <End Role="orders" EntitySet="orders" />
-            <End Role="Transactions" EntitySet="Transactions" />
-          </AssociationSet>
-          <AssociationSet Name="fk_meta_product" Association="Self.fk_meta_product">
-            <End Role="product" EntitySet="products" />
-            <End Role="product_meta" EntitySet="product_meta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_product_user" Association="Self.fk_product_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="product" EntitySet="products" />
-          </AssociationSet>
-          <AssociationSet Name="fk_transactions_user" Association="Self.fk_transactions_user">
-            <End Role="USERS" EntitySet="USERS" />
-            <End Role="Transactions" EntitySet="Transactions" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OnlineShoppingCartModelStoreContainer" CdmEntityContainer="OnlineShoppingCartEntities">
+        <EntityContainerMapping StorageEntityContainer="OSCModelStoreContainer" CdmEntityContainer="OSCEntities">
           <EntitySetMapping Name="carts">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.cart">
+            <EntityTypeMapping TypeName="OSCModel.cart">
               <MappingFragment StoreEntitySet="cart">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
-                <ScalarProperty Name="sessionId" ColumnName="sessionId" />
-                <ScalarProperty Name="token" ColumnName="token" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="line1" ColumnName="line1" />
-                <ScalarProperty Name="line2" ColumnName="line2" />
-                <ScalarProperty Name="city" ColumnName="city" />
-                <ScalarProperty Name="province" ColumnName="province" />
-                <ScalarProperty Name="country" ColumnName="country" />
-                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
-                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
-                <ScalarProperty Name="content" ColumnName="content" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="cart_item">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.cart_item">
-              <MappingFragment StoreEntitySet="cart_item">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="productId" ColumnName="productId" />
-                <ScalarProperty Name="cartId" ColumnName="cartId" />
-                <ScalarProperty Name="sku" ColumnName="sku" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="SNO_" ColumnName="SNO." />
+                <ScalarProperty Name="Username" ColumnName="userId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="productname" ColumnName="productname" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="active" ColumnName="active" />
-                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
-                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
-                <ScalarProperty Name="content" ColumnName="content" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="order_item">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.order_item">
-              <MappingFragment StoreEntitySet="order_item">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="productId" ColumnName="productId" />
-                <ScalarProperty Name="orderId" ColumnName="orderId" />
-                <ScalarProperty Name="sku" ColumnName="sku" />
                 <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="discount" ColumnName="discount" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
-                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
-                <ScalarProperty Name="content" ColumnName="content" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="orders">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.order">
-              <MappingFragment StoreEntitySet="orders">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
-                <ScalarProperty Name="sessionId" ColumnName="sessionId" />
-                <ScalarProperty Name="token" ColumnName="token" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="subTotal" ColumnName="subTotal" />
-                <ScalarProperty Name="itemDiscount" ColumnName="itemDiscount" />
-                <ScalarProperty Name="tax" ColumnName="tax" />
-                <ScalarProperty Name="shipping" ColumnName="shipping" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="promo" ColumnName="promo" />
-                <ScalarProperty Name="discount" ColumnName="discount" />
-                <ScalarProperty Name="grandTotal" ColumnName="grandTotal" />
-                <ScalarProperty Name="firstName" ColumnName="firstName" />
-                <ScalarProperty Name="middleName" ColumnName="middleName" />
-                <ScalarProperty Name="lastName" ColumnName="lastName" />
-                <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="line1" ColumnName="line1" />
-                <ScalarProperty Name="line2" ColumnName="line2" />
-                <ScalarProperty Name="city" ColumnName="city" />
-                <ScalarProperty Name="province" ColumnName="province" />
-                <ScalarProperty Name="country" ColumnName="country" />
-                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
-                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
-                <ScalarProperty Name="content" ColumnName="content" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="products">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.product">
+            <EntityTypeMapping TypeName="OSCModel.product">
               <MappingFragment StoreEntitySet="product">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="SNO_" ColumnName="SNO." />
+                <ScalarProperty Name="productId" ColumnName="productId" />
                 <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="metaTitle" ColumnName="metaTitle" />
-                <ScalarProperty Name="slug" ColumnName="slug" />
                 <ScalarProperty Name="summary" ColumnName="summary" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="sku" ColumnName="sku" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="discount" ColumnName="discount" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="shop" ColumnName="shop" />
                 <ScalarProperty Name="createdAt" ColumnName="createdAt" />
                 <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
-                <ScalarProperty Name="publishedAt" ColumnName="publishedAt" />
                 <ScalarProperty Name="startsAt" ColumnName="startsAt" />
                 <ScalarProperty Name="endsAt" ColumnName="endsAt" />
-                <ScalarProperty Name="content" ColumnName="content" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="product_meta">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.product_meta">
-              <MappingFragment StoreEntitySet="product_meta">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="productId" ColumnName="productId" />
-                <ScalarProperty Name="key" ColumnName="key" />
-                <ScalarProperty Name="content" ColumnName="content" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Transactions">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.Transaction">
-              <MappingFragment StoreEntitySet="Transactions">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
-                <ScalarProperty Name="orderId" ColumnName="orderId" />
-                <ScalarProperty Name="code" ColumnName="code" />
-                <ScalarProperty Name="type" ColumnName="type" />
-                <ScalarProperty Name="mode" ColumnName="mode" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
-                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
-                <ScalarProperty Name="content" ColumnName="content" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="USERS">
-            <EntityTypeMapping TypeName="OnlineShoppingCartModel.USER">
+            <EntityTypeMapping TypeName="OSCModel.USER">
               <MappingFragment StoreEntitySet="USERS">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="registeredAt" ColumnName="registeredAt" />
                 <ScalarProperty Name="lastLogin" ColumnName="lastLogin" />

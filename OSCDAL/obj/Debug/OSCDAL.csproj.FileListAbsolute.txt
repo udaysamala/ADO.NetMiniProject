@@ -19,4 +19,3 @@ W:\LTTS\ADONET\Project\OnlineShoppingCart\OSCDAL\obj\Debug\OSCDAL.csproj.Assembl
 W:\LTTS\ADONET\Project\OnlineShoppingCart\OSCDAL\obj\Debug\OSCDAL.csproj.CoreCompileInputs.cache
 W:\LTTS\ADONET\Project\OnlineShoppingCart\OSCDAL\obj\Debug\OSCDAL.dll
 W:\LTTS\ADONET\Project\OnlineShoppingCart\OSCDAL\obj\Debug\OSCDAL.pdb
-W:\LTTS\ADONET\Project\OnlineShoppingCart\OSCDAL\obj\Debug\OSCDAL.csproj.CopyComplete

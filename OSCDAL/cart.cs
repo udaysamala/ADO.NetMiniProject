@@ -14,31 +14,13 @@ namespace OSCDAL
     
     public partial class cart
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public cart()
-        {
-            this.cart_item = new HashSet<cart_item>();
-        }
-    
-        public long id { get; set; }
-        public Nullable<long> userId { get; set; }
-        public string sessionId { get; set; }
-        public string token { get; set; }
-        public short status { get; set; }
-        public string Name { get; set; }
-        public string mobile { get; set; }
-        public string email { get; set; }
-        public string line1 { get; set; }
-        public string line2 { get; set; }
-        public string city { get; set; }
-        public string province { get; set; }
-        public string country { get; set; }
-        public System.DateTime createdAt { get; set; }
-        public Nullable<System.DateTime> updatedAt { get; set; }
-        public string content { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cart_item> cart_item { get; set; }
-        public virtual USER USER { get; set; }
+        
+
+        public long SNO_ { get; set; }
+        public Nullable<long> Username { get; set; }
+        public long ProductId { get; set; }
+        public string productname { get; set; }
+        public short quantity { get; set; }
+        public double price { get; set; }
     }
 }

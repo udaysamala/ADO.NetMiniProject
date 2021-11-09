@@ -8,18 +8,21 @@ namespace OSCDTO
 {
     public class Customer
     {
-        private string email;
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
+        private string username;
+        
         private string password;
+        private string name;
+        private string mobile;
         public string Password
         {
             get { return password; }
             set { password = value; }
         }
+
+        public string Username { get => username; set => username = value; }
+       
+        public string Mobile { get => mobile; set => mobile = value; }
+        public string Name { get => name; set => name = value; }
     }
     public class Admin{
         string user ="admin";
@@ -27,6 +30,44 @@ namespace OSCDTO
 
         public string User { get => user; set => user = value; }
         public string Pass { get => pass; set => pass = value; }
+    }
+    public class Product
+    {
+        string sno;
+        string productId;
+        string title;
+        string summary;
+        string price;
+        string discount;
+        string quantity;
+        string deleteproduct;
+
+        public string Sno { get => sno; set => sno = value; }
+        public string ProductId { get => productId; set => productId = value; }
+        public string Title { get => title; set => title = value; }
+        public string Summary { get => summary; set => summary = value; }
+        public string Price { get => price; set => price = value; }
+        public string Discount { get => discount; set => discount = value; }
+        public string Quantity { get => quantity; set => quantity = value; }
+        public string Deleteproduct { get => deleteproduct; set => deleteproduct = value; }
+    }
+    public class ADDCart
+    {
+        string check;
+        string sno;
+        string username;
+        string productid;
+        string productname;
+        string quantity;
+        string price;
+
+        public string Sno { get => sno; set => sno = value; }
+        public string Username { get => username; set => username = value; }
+        public string Productid { get => productid; set => productid = value; }
+        public string Productname { get => productname; set => productname = value; }
+        public string Quantity { get => quantity; set => quantity = value; }
+        public string Price { get => price; set => price = value; }
+        public string Check { get => check; set => check = value; }
     }
 
 }

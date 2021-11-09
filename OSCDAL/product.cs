@@ -14,39 +14,16 @@ namespace OSCDAL
     
     public partial class product
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public product()
-        {
-            this.cart_item = new HashSet<cart_item>();
-            this.order_item = new HashSet<order_item>();
-            this.product_meta = new HashSet<product_meta>();
-        }
-    
-        public long id { get; set; }
-        public long userId { get; set; }
+        public long SNO_ { get; set; }
+        public long productId { get; set; }
         public string title { get; set; }
-        public string metaTitle { get; set; }
-        public string slug { get; set; }
         public string summary { get; set; }
-        public short type { get; set; }
-        public string sku { get; set; }
         public double price { get; set; }
         public double discount { get; set; }
         public short quantity { get; set; }
-        public short shop { get; set; }
         public System.DateTime createdAt { get; set; }
         public Nullable<System.DateTime> updatedAt { get; set; }
-        public Nullable<System.DateTime> publishedAt { get; set; }
         public Nullable<System.DateTime> startsAt { get; set; }
         public Nullable<System.DateTime> endsAt { get; set; }
-        public string content { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cart_item> cart_item { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<order_item> order_item { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<product_meta> product_meta { get; set; }
-        public virtual USER USER { get; set; }
     }
 }

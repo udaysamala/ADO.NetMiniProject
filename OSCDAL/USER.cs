@@ -14,30 +14,12 @@ namespace OSCDAL
     
     public partial class USER
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public USER()
-        {
-            this.carts = new HashSet<cart>();
-            this.orders = new HashSet<order>();
-            this.products = new HashSet<product>();
-            this.Transactions = new HashSet<Transaction>();
-        }
-    
         public long id { get; set; }
         public string Name { get; set; }
         public string mobile { get; set; }
-        public string email { get; set; }
+        public string username { get; set; }
         public string password { get; set; }
         public System.DateTime registeredAt { get; set; }
         public Nullable<System.DateTime> lastLogin { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cart> carts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<order> orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<product> products { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

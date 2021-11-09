@@ -13,10 +13,10 @@ namespace OSCDAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OnlineShoppingCartEntities : DbContext
+    public partial class OSCEntities : DbContext
     {
-        public OnlineShoppingCartEntities()
-            : base("name=OnlineShoppingCartEntities")
+        public OSCEntities()
+            : base("name=OSCEntities")
         {
         }
     
@@ -26,12 +26,7 @@ namespace OSCDAL
         }
     
         public virtual DbSet<cart> carts { get; set; }
-        public virtual DbSet<cart_item> cart_item { get; set; }
-        public virtual DbSet<order_item> order_item { get; set; }
-        public virtual DbSet<order> orders { get; set; }
         public virtual DbSet<product> products { get; set; }
-        public virtual DbSet<product_meta> product_meta { get; set; }
-        public virtual DbSet<Transaction> Transactions { get; set; }
         public virtual DbSet<USER> USERS { get; set; }
     }
 }

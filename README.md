@@ -23,32 +23,32 @@
    <tr>
     <td>40019973</td>
     <td>Udaykumar Samala</td>
-    <td ></td>
+    <td >Login Features-registration,login & View Products</td>
     <td></td>
     
   </tr>
    <tr>
     <td>40018648</td>
     <td>Ch.Sowmya</td>
-    <td></td>
+    <td>Add Product Items & Delete Products</td>
     <td></td>
   </tr>
    <tr>
     <td>40018961</td>
     <td>Naveen Kumar Ready Yerram</td>
-    <td></td>
+    <td>Creation & Make Password Secure</td>
     <td></td>
   </tr>
    <tr>
     <td>40018978</td>
     <td>Golla Mani Varma</td>
-    <td></td>
+    <td>Adding To Cart & Delete From Cart</td>
     <td></td>
   </tr>
    <tr>
     <td>40018976</td>
     <td>Gorthi Ravi Teja</td>
-    <td></td>
+    <td>Updating Product Table & SQL Querys</td>
     <td></td>
   </tr>
    

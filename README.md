@@ -1,4 +1,4 @@
-# ADO.NetMiniProject
+# ADO.NetMiniProject-Online Shopping Cart
 ## Folder Structure:
 
 | Folder | Description |
